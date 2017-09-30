@@ -4,24 +4,20 @@ module.exports = function(express){
 
     var router = express.Router();
 
-    router.get("/articles", function(req, res){
+    router.route("/articles")
+        .get(function(req, res){
         res.json(articles);
-    });
-
-    router.post("/articles", function(req, res){
+    }).post(function(req, res){
         articles.push(req.body);
         res.redirect("/articles");
     });
 
-    router.get("/articles/:id", function(req, res){
+    router.route("/articles/:id")
+        .get(function(req, res){
 
-    });
+    }).put(function(req, res){
 
-    router.put("/articles/:id", function(req, res){
-
-    });
-
-    router.delete("/articles/:id", function(req, res){
+    }).delete("/articles/:id", function(req, res){
 
     });
 
