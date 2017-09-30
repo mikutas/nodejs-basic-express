@@ -1,8 +1,12 @@
 var express = require("express");
 var app = express();
 
+var morgan = require("morgan");
+
+app.use(morgan("dev"));
+
 app.get("/hello/:name", function(req, res){
-    res.send("Hello, " + req.params.name);
+    res.send("Hello, " + req.params.name + "!");
 });
 
 app.get("/hello", function(req, res){
